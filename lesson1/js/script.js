@@ -1,39 +1,37 @@
-var monthBudjet = +prompt("What is your monthly budjet?");
-var shopName = prompt("What is the shop name?");
-var mainList;
-var money = monthBudjet/30;
-var employersShop
-var goods;
+var monthBudjet = +prompt("What is your monthly budjet?"),
+    shopName = prompt("What is the shop name?"),
+    mainList,
+    money = monthBudjet/30,
+    employersShop,
+    goods;
 
 
-var i = 0;
-while (i < 3) {
-  var product = prompt( "what kind of goods we are going to sell?" );
-  i++;
-}
+// var i = 0;
+// while (i < 3) {
+//   var product = prompt( "what kind of goods we are going to sell?" );
+//   i++;
+// }
 
 alert('Your budjet' +  money)
 
 mainList = {
-	monthBudjet,
-	shopName,
-	employersShop,
- goods, 
- // goods[0] = product
- // goods[1] = product
- // goods[2] = product
- // ],
+	money: monthBudjet,
+	name: shopName,
+	employee: employersShop,
+ goods: [], 
  open: true,
 }
 ;
 
-goods = [ product[0], product[1], product[2] ];
-console.log(product[0]);
-console.log(product[1]);
-console.log(product[2]);
-// goods[0]=''
-// goods[1]=''
-// goods[2]=''
+mainList.goods[0] = prompt( "what kind of goods we are going to sell?" );
+mainList.goods[1] = prompt( "what kind of goods we are going to sell?" );
+mainList.goods[2] = prompt( "what kind of goods we are going to sell?" );
+
+
+console.log(mainList.goods[0]);
+console.log(mainList.goods[1]);
+console.log(mainList.goods[2]);
+
 
 employersShop = {
  name: "John Smith",
