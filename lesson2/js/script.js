@@ -1,11 +1,11 @@
-var monthBudjet = +prompt("What is your monthly budjet?");
-var shopName = prompt("What is the shop name?");
-var mainList;
-var money = monthBudjet/30;
-var employersShop;
-var goods;
-let time = 19;
-
+let monthBudjet = +prompt("What is your monthly budjet?");
+    shopName = prompt("What is the shop name?"),
+    // mainList,
+    money = monthBudjet/30,
+    // employersShop,
+    // goods,
+    time = 19;
+let goods;
 
 // var i = 0;
 // while (i < 3) {
@@ -15,7 +15,7 @@ let time = 19;
 
 alert('Your budjet' +  money)
 
-mainList = {
+let mainList = {
 	budjet: money,
 	shopName: shopName,
 	employersShop: {},
@@ -28,15 +28,39 @@ for (let i = 0; i < 5; i++) {
 
 	let a = prompt( "what kind of goods we are going to sell?" );
 
-	if ((typeof(a)) === 'string' && (typeof(a)) === null && a != '' && a.length < 50) {
+	if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
 		console.log("все верно");
 		mainList.goods[i] = a;
 	} else {
-
+  console.log("неверно");
+		// mainList.goods[i] = a;
 	}
-}
+};
+
+// let i = 0;
+//  while (i < 5) {
+//  	let a = prompt( "what kind of goods we are going to sell?" );
+//  	i++;
+//  	if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
+// 		console.log("все верно");
+// 		mainList.goods[i] = a;
+// 	} else {
+//   console.log("неверно");
+// 	}
+// };
 
 
+// for (let i = 0; i < 5; i++) {
+
+// 	let a = prompt( "what kind of goods we are going to sell?" );
+
+//  switch (a) {
+//  	case ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50):
+//  	console.log("получилось");
+//   mainList.goods[i] = a;
+//   break;
+// }
+// }
 
 
 
