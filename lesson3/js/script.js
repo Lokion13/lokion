@@ -88,7 +88,7 @@ if (time < 0) {
   }
 };
 
-workTime(18);
+workTime();
 // mainList.goods[0] = prompt( "what kind of goods we are going to sell?" );
 // mainList.goods[1] = prompt( "what kind of goods we are going to sell?" );
 // mainList.goods[2] = prompt( "what kind of goods we are going to sell?" );
