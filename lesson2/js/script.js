@@ -24,18 +24,18 @@ let mainList = {
 }
 ;
 
-for (let i = 0; i < 5; i++) {
+// for (let i = 0; i < 5; i++) {
 
-	let a = prompt( "what kind of goods we are going to sell?" );
+// 	let a = prompt( "what kind of goods we are going to sell?" );
 
-	if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
-		console.log("все верно");
-		mainList.goods[i] = a;
-	} else {
-  console.log("неверно");
-		// mainList.goods[i] = a;
-	}
-};
+// 	if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
+// 		console.log("все верно");
+// 		mainList.goods[i] = a;
+// 	} else {
+//   console.log("неверно");
+// 		// mainList.goods[i] = a;
+// 	}
+// };
 
 // let i = 0;
 //  while (i < 5) {
@@ -48,6 +48,22 @@ for (let i = 0; i < 5; i++) {
 //   console.log("неверно");
 // 	}
 // };
+
+
+let i = 0;
+do {
+	let a = prompt( "what kind of goods we are going to sell?" );
+ i++;
+ console.log("все верно");
+	mainList.goods[i] = a;
+} while (i < 5) {
+ 	if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
+	} else {
+  console.log("неверно");
+	}
+};
+
+
 
 
 // for (let i = 0; i < 5; i++) {
