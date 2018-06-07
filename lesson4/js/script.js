@@ -74,14 +74,14 @@ let mainList = {
     }
   },
   chooseShopItem: function chooseShopItem() {
-    for ( i = 1; i < 3; i++) {
+    for ( i = 1; i < 2; i++) {
       let items = prompt("List all the items using coma", '');
      if ((typeof(items)) === 'string' && (typeof(items)) != null && items != '') {
        mainList.shopItems = items.split(",");
        mainList.shopItems.push(prompt("Wait, one more item ", ""));
        mainList.shopItems.sort();
-       shopItems.forEach(function(item, i, shopItems) {
-       alert(i + " We could suggest you such items as: " + item );
+       mainList.shopItems.forEach(function(item, i, shopItems) {
+       alert(" We could suggest you such items as: " + i + item );
        });
        console.log(" ну можешь же");
      } else {
@@ -92,8 +92,8 @@ let mainList = {
 }
 ;
 
-for( let key in shopItems) {
-  console.log("Our shop includes: " + key + shopItems[key]);
+for( let key in mainList.shopItems) {
+  console.log("Our shop includes: " + key + mainList.shopItems[key]);
 };
 console.log(mainList);
 
