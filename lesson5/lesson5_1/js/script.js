@@ -1,4 +1,4 @@
-let menu = document.getElementsByClassName('menu'), 
+let menu = document.getElementsByClassName('menu')[0], 
     title = document.getElementById('title'),
     adv = document.querySelector('.adv').remove(),
     column = document.getElementsByClassName('column'),
@@ -19,7 +19,7 @@ title.textContent = 'Мы продаем только подлинную тех�
 answer.innerHTML = question;
 menuItem[1].textContent = 'Второй пункт';
 menuItem[2].textContent = 'Третий пункт';
-// newMenuItem.classList.add('.menu-item');
+newMenuItem.classList.add('menu-item');
 // document.appendChild(newMenuItem);
 
 // newMenuItem.textContent = 'Пятый пункт';
@@ -27,9 +27,9 @@ menuItem[2].textContent = 'Третий пункт';
 // document.menuItem.appendChild(newMenuItem);
 
 // document.body.replaceChild(menuItem[2], menuItem[1]);
-newMenuItem.className = 'menu-item';
+// newMenuItem.className = 'menu-item';
 newMenuItem.innerHTML = 'Пятый пункт';
-document.menuUl.appendChild(newMenuItem);
+menuUl[0].appendChild(newMenuItem);
 
 
 
