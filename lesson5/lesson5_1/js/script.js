@@ -4,7 +4,8 @@ let menu = document.getElementsByClassName('menu'),
     column = document.getElementsByClassName('column'),
     answer = document.getElementById('prompt'),
     menuItem = document.getElementsByClassName('menu-item'),
-    menuItemLi = document.getElementsByTagName('li')
+    menuUl = document.getElementsByTagName('ul'),
+    menuItemLi = document.getElementsByTagName('li'),
     newMenuItem = document.createElement('li');
 let question = prompt('What is your opinion about devices produced by apple?');
 
@@ -26,30 +27,9 @@ menuItem[2].textContent = 'Третий пункт';
 // document.menuItem.appendChild(newMenuItem);
 
 // document.body.replaceChild(menuItem[2], menuItem[1]);
-
+newMenuItem.className = 'menu-item';
 newMenuItem.innerHTML = 'Пятый пункт';
-menu.appendChild(newMenuItem);
+document.menuUl.appendChild(newMenuItem);
 
 
 
-// // родительский элемент UL
-// 02
-// var list = document.getElementById('list2')
-// 03
-// // элемент для вставки перед ним (первый LI)
-// 04
-// var firstLi = list.getElementsByTagName('LI')[0]
-// 05
- 
-// 06
-// // новый элемент
-// 07
-// var newListElem = document.createElement('LI')
-// 08
-// newListElem.innerHTML = 'Новый элемент списка'
-// 09
- 
-// 10
-// // вставка
-// 11
-// menu.insertBefore(newListElem);
