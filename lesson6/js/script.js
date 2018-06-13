@@ -29,8 +29,8 @@ let open = document.getElementById("open-btn"),
 let monthBudjet,
     shopName,
     money,
-    employersShop = {},
-    price = 100;
+    employersShop = {};
+    // price = 100;
 // let goods;
 
 
@@ -92,14 +92,14 @@ timeValue.addEventListener('change', () => {
     isOpenValue.style.backgroundColor = 'red';
    };
 
-   if(time > 8 && time < 20 && goodsItem != '' && timeValue != '') {
-    goodsButton.disabled = false;
-   } else if (time > 8 && time < 20 && hireEmployersItem != '' && timeValue != '') {
-    hireEmployersBtn.disabled = false;
-   } else {
-    goodsButton.disabled = true;
-    hireEmployersBtn.disabled = true;
-   }
+   // if(time > 8 && time < 20 && goodsItem != '' && timeValue != '') {
+   //  goodsButton.disabled = false;
+   // } else if (time > 8 && time < 20 && hireEmployersItem != '' && timeValue != '') {
+   //  hireEmployersBtn.disabled = false;
+   // } else {
+   //  goodsButton.disabled = true;
+   //  hireEmployersBtn.disabled = true;
+   // }
 
 });
 
@@ -107,36 +107,59 @@ budjetBtn.addEventListener('click', () => {
   budjetDayValue.value = monthBudjet/30;
 });
 
-// budjetDayValue.readOnly = true;
+
+
+
+
+
 
 hireEmployersBtn.addEventListener('click', () => {
+
   for (let i = 0; i < hireEmployersItem.length; i++) {
     let a = hireEmployersItem[i].value;
      if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
       console.log("все верно");
       mainList.employersShop[i] = a;
       employersValue.textContent += mainList.employersShop[i] + ', ';
-     } 
+     } else if (hireEmployersItem[i].value != '') {
+      hireEmployersBtn.disabled = false;
+     }
     }
 });
 
+hireEmployersBtn.disabled = true;
+ for(let i = 0; i < hireEmployersItem[i].length; i++) {
+  hireEmployersItem[i].addEventListener('change', () => {
+    if(hireEmployersItem[i].value != '')  {
+      hireEmployersBtn.disabled = false;
+    }
+  });
+ }
 
+goodsButton.disabled = true;
+for(let i = 0; i < goodsItem[i].length; i++) {
+  goodsItem[i].addEventListener('change', () => {
+    if(goodsItem[i].value != '')  {
+      goodsButton.disabled = false;
+    }
+  });
+ }
 
-
-
-// price.addEventListener('change', () => {
-//   if (price >= 100) {
-//     price = price * 0.8;
-//     discount = true;
-//   };
-//   if (discount = true) {
-//     discountValue.style.backgroundColor = 'green';
+ 
+let price = prompt("What is the price?");
+for (let i = 0; i < 1; i++) {
+  if (price >= 100) {
+    price = price * 0.8;
+    discount = true;
+    alert(price);
+  };
+  if (discount = true) {
+    discountValue.style.backgroundColor = 'green';
     
-//     } else {
-//     discountValue.style.backgroundColor = 'red';
-//    }
-// });
-
+    } else {
+    discountValue.style.backgroundColor = 'red';
+   }
+}
 
 
 let mainList = {
@@ -147,11 +170,6 @@ let mainList = {
   open: false,
   discount: false,
   shopItems: [],
- 
-  
-  
-  
-  
 }
 ;
 
@@ -165,26 +183,26 @@ console.log(mainList);
 
 
 
-timeValue.addEventListener('change', () => {
-  let time = timeValue.value;
-    if (time < 0) {
-    console.log('Это невозможно');
-    mainList.open = false;
-   } else if(time > 8 && time < 20) {
-      console.log('Рабочее время');
-      mainList.open = true;
-   } else if(time < 24) {
-      console.log('Уже слишком поздно');
-      mainList.open = false;
-   } else {
-      console.log('в сутках всего 24 часа');
-      mainList.open = false;
-   };
-   if(mainList.open == true) {
-    isOpenValue.style.backgroundColor = 'green';
-   }
-   else {
-    isOpenValue.style.backgroundColor = 'red';
-   }
+// timeValue.addEventListener('change', () => {
+//   let time = timeValue.value;
+//     if (time < 0) {
+//     console.log('Это невозможно');
+//     mainList.open = false;
+//    } else if(time > 8 && time < 20) {
+//       console.log('Рабочее время');
+//       mainList.open = true;
+//    } else if(time < 24) {
+//       console.log('Уже слишком поздно');
+//       mainList.open = false;
+//    } else {
+//       console.log('в сутках всего 24 часа');
+//       mainList.open = false;
+//    };
+//    if(mainList.open == true) {
+//     isOpenValue.style.backgroundColor = 'green';
+//    }
+//    else {
+//     isOpenValue.style.backgroundColor = 'red';
+//    }
 
-});
+// });
