@@ -21,7 +21,8 @@ let open = document.getElementById("open-btn"),
     budjetDayValue = document.querySelector('.count-budget-value').readOnly = true,
     budjetBtn = document.querySelector('.count-budget-btn'),
     hireEmployersItem = document.querySelectorAll('.hire-employers-item'),
-    hireEmployersBtn = document.querySelector('.hire-employers-btn');
+    hireEmployersBtn = document.querySelector('.hire-employers-btn'),
+    btns = document.getElementsByTagName('button');
 
 
 
@@ -91,23 +92,34 @@ timeValue.addEventListener('change', () => {
    else {
     isOpenValue.style.backgroundColor = 'red';
    };
-
-   // if(time > 8 && time < 20 && goodsItem != '' && timeValue != '') {
-   //  goodsButton.disabled = false;
-   // } else if (time > 8 && time < 20 && hireEmployersItem != '' && timeValue != '') {
-   //  hireEmployersBtn.disabled = false;
-   // } else {
-   //  goodsButton.disabled = true;
-   //  hireEmployersBtn.disabled = true;
-   // }
-
 });
 
 budjetBtn.addEventListener('click', () => {
   budjetDayValue.value = monthBudjet/30;
 });
 
+hireEmployersBtn.disabled = true;
+goodsButton.disabled = true;
 
+ function unlockBtns(selector, btn) {
+        for(let i = 0; i < selector.length; i++) {
+            selector[i].addEventListener('keyup', () => {
+                let count = 0;
+                for(let j = 0; j < selector.length; j++){
+                    if(selector[j].value != ''){
+                        count++;
+                    }
+                }
+                if(count >= selector.length) {
+                    btn.disabled = false;
+                }
+            });
+        }
+    }
+
+        //открываем кнопки
+        unlockBtns(goodsItem,goodsButton);
+        unlockBtns(hireEmployersItem,hireEmployersBtn);
 
 
 
@@ -115,7 +127,7 @@ budjetBtn.addEventListener('click', () => {
 
 hireEmployersBtn.addEventListener('click', () => {
 
-  for (let i = 0; i < hireEmployersItem.length; i++) {
+  for(let i = 0; i < hireEmployersItem.length; i++) {
     let a = hireEmployersItem[i].value;
      if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
       console.log("все верно");
@@ -127,25 +139,25 @@ hireEmployersBtn.addEventListener('click', () => {
     }
 });
 
-hireEmployersBtn.disabled = true;
- for(let i = 0; i < hireEmployersItem[i].length; i++) {
-  hireEmployersItem[i].addEventListener('change', () => {
-    if(hireEmployersItem[i].value != '')  {
-      hireEmployersBtn.disabled = false;
-    }
-  });
- }
+// hireEmployersBtn.disabled = true;
+//  for(let i = 0; i < hireEmployersItem[i].length; i++) {
+//   hireEmployersItem[i].addEventListener('change', () => {
+//     if(hireEmployersItem[i].value != '')  {
+//       hireEmployersBtn.disabled = false;
+//     }
+//   });
+//  }
 
-goodsButton.disabled = true;
-for(let i = 0; i < goodsItem[i].length; i++) {
-  goodsItem[i].addEventListener('change', () => {
-    if(goodsItem[i].value != '')  {
-      goodsButton.disabled = false;
-    }
-  });
- }
+// goodsButton.disabled = true;
+// for(let i = 0; i < goodsItem[i].length; i++) {
+//   goodsItem[i].addEventListener('change', () => {
+//     if(goodsItem[i].value != '')  {
+//       goodsButton.disabled = false;
+//     }
+//   });
+//  }
 
- 
+
 let price = prompt("What is the price?");
 for (let i = 0; i < 1; i++) {
   if (price >= 100) {
@@ -173,6 +185,8 @@ let mainList = {
 }
 ;
 
+// какие свойства содержит обьект mainList
+
 for( let key in mainList.shopItems) {
   console.log("Our shop includes: " + key + mainList.shopItems[key]);
 };
@@ -182,27 +196,3 @@ console.log(mainList);
 // alert(i + " We could suggest you such items as: " + item );
 
 
-
-// timeValue.addEventListener('change', () => {
-//   let time = timeValue.value;
-//     if (time < 0) {
-//     console.log('Это невозможно');
-//     mainList.open = false;
-//    } else if(time > 8 && time < 20) {
-//       console.log('Рабочее время');
-//       mainList.open = true;
-//    } else if(time < 24) {
-//       console.log('Уже слишком поздно');
-//       mainList.open = false;
-//    } else {
-//       console.log('в сутках всего 24 часа');
-//       mainList.open = false;
-//    };
-//    if(mainList.open == true) {
-//     isOpenValue.style.backgroundColor = 'green';
-//    }
-//    else {
-//     isOpenValue.style.backgroundColor = 'red';
-//    }
-
-// });
