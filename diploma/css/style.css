@@ -1052,6 +1052,12 @@ textarea:focus {
   .sale .timer {
     margin-bottom: 3rem;
     text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  .time_block {
+    font-size: 40px;
+    font-weight: bold;
   }
   .contacts_info {
     margin-top: 3rem;
